@@ -31,5 +31,11 @@ module.exports = function(app) {
   app.get("/authors", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/author-manager.html"));
   });
+  app.get("/signup", function(req, res) {
+    res.render("signup")
+  });
+  app.get("/login", function(req, res) {
+    res.render("login")
+  });
 
 };

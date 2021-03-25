@@ -18,6 +18,12 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+var expressHandlebar=require("express-handlebars")
+app.engine("handlebars", expressHandlebar({defaultLayout:"main"}))
+app.set("view engine", "handlebars")
+
+
 // Static directory
 app.use(express.static("public"));
 
