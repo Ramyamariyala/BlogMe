@@ -1,10 +1,7 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
 var express = require("express");
+var session = require("express-session");
+// Requiring passport as we've configured it
+var passport = require("./config/passport");
 
 // Sets up the Express App
 // =============================================================
@@ -18,13 +15,23 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
+var expressHandlebar=require("express-handlebars")
+app.engine("handlebars", expressHandlebar({defaultLayout:"main"}))
+app.set("view engine", "handlebars")
+
+
 // Static directory
 app.use(express.static("public"));
 
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
 require("./routes/author-api-routes.js")(app);
+require("./routes/api-routes.js")(app);
 require("./routes/post-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
