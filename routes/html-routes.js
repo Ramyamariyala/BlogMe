@@ -14,7 +14,7 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
+    res.render("index")
   });
 
   // cms route loads cms.html
@@ -37,5 +37,7 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     res.render("login")
   });
-
+  app.get("/landing", function(req, res) {
+    res.render("index")
+  });
 };
