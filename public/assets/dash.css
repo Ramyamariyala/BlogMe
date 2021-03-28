@@ -1,76 +1,72 @@
 body {
-    font-family: Arial;
-    padding: 20px;
-    background: #f1f1f1;
-  }
-  
-  /* Header/Blog Title */
-  .header {
-    padding: 30px;
-    font-size: 40px;
-    text-align: center;
-    background: white;
-  }
-  
-  /* Create two unequal columns that floats next to each other */
-  /* Left column */
-  .leftcolumn {
-    float: left;
-    width: 100%;
-    text-align: center;
-  }
-  
-    /* Right column */
+  font-family: Arial;
+  padding: 20px;
+  background: #f1f1f1;
+}
+
+/* Header/Blog Title */
+.header {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  background: white;
+}
+
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 100%;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 96%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .leftcolumn,
   .rightcolumn {
-    float: left;
     width: 100%;
-    padding-left: 20px;
+    padding: 0;
   }
-  
-  /* Fake image */
-  .fakeimg {
-    background-color: #aaa;
-    width: 96%;
-    padding: 20px;
-  }
-  
-  /* Add a card effect for articles */
-  .card {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-        
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Footer */
-  .footer {
-    padding: 20px;
-    text-align: center;
-    background: #ddd;
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {
-      width: 100%;
-      padding: 0;
-    }
-  }
+}
 
-
-
-
-
-  //variables
+//variables
 $basic-dark-color: #212121;
 $basic-light-color: #fff;
 $fb-color: #3b5998;
@@ -88,20 +84,20 @@ $font-size: 25px;
 .container {
   margin: 60px auto 0px auto;
   text-align: center;
-  
+
   h1 {
     font: {
-      family: 'Roboto', sans-serif;
+      family: "Roboto", sans-serif;
       weight: 900;
       size: 30px;
     }
     text-transform: uppercase;
     color: $basic-dark-color;
     letter-spacing: 3px;
-    
+
     span {
       display: inline-block;
-      
+
       &:before,
       &:after {
         content: "";
@@ -119,37 +115,36 @@ $font-size: 25px;
   width: 100%;
   padding: 50px 0px 70px 0px;
   background-color: $basic-dark-color;
-  
+
   h2 {
     color: $basic-light-color;
     font: {
-      family: 'Playfair Display', serif;
+      family: "Playfair Display", serif;
       weight: 400;
       size: 25px;
     }
     letter-spacing: 3px;
   }
-  
+
   &:nth-child(2) {
     margin-top: 50px;
   }
-  
-  &:nth-child(2n+1) {
+
+  &:nth-child(2n + 1) {
     background-color: $basic-light-color;
-    
+
     h2 {
       color: $basic-dark-color;
     }
   }
-  
+
   .buttons {
     margin-top: 50px;
     display: flex;
     justify-content: center;
   }
-  
+
   a {
-    
     &:last-child {
       margin-right: 0px;
     }
@@ -158,8 +153,8 @@ $font-size: 25px;
 
 /*common link styles !!!YOU NEED THEM*/
 .effect {
-  display: flex; 
-  
+  display: flex;
+
   a {
     text-decoration: none !important;
     color: $basic-light-color;
@@ -173,43 +168,43 @@ $font-size: 25px;
     font-size: $font-size;
     overflow: hidden;
     position: relative;
-    
+
     i {
       position: relative;
       z-index: 3;
     }
-    
+
     &.fb {
       background-color: $fb-color;
-      }
-    
+    }
+
     &.tw {
       background-color: $tw-color;
     }
-    
+
     &.g-plus {
       background-color: $g-plus;
     }
-    
-       
+
     &.insta {
       background-color: $insta;
     }
-    
+
     &.in {
       background-color: $in;
     }
-    
-   }
+  }
 }
 
 /* social media icons styling */
- 
+
 .effect.jaques {
-  
   a {
-    transition: border-top-left-radius 0.1s linear 0s, border-top-right-radius 0.1s linear 0.1s, border-bottom-right-radius 0.1s linear 0.2s, border-bottom-left-radius 0.1s linear 0.3s;
-    
+    transition: border-top-left-radius 0.1s linear 0s,
+      border-top-right-radius 0.1s linear 0.1s,
+      border-bottom-right-radius 0.1s linear 0.2s,
+      border-bottom-left-radius 0.1s linear 0.3s;
+
     &:hover {
       border-radius: 50%;
     }
@@ -239,12 +234,10 @@ $font-size: 25px;
   color: #aaa;
 }
 
-
-
 body {
   font-size: 20px;
   color: #212529;
-  font-family: 'Lora', 'Times New Roman', serif;
+  font-family: "Lora", "Times New Roman", serif;
 }
 
 p {
@@ -263,7 +256,7 @@ h4,
 h5,
 h6 {
   font-weight: 800;
-  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -271,8 +264,9 @@ a {
   transition: all 0.2s;
 }
 
-a:focus, a:hover {
-  color: #0085A1;
+a:focus,
+a:hover {
+  color: #0085a1;
 }
 
 blockquote {
@@ -299,13 +293,13 @@ blockquote {
 
 ::-moz-selection {
   color: #fff;
-  background: #0085A1;
+  background: #0085a1;
   text-shadow: none;
 }
 
 ::selection {
   color: #fff;
-  background: #0085A1;
+  background: #0085a1;
   text-shadow: none;
 }
 
@@ -324,7 +318,7 @@ img::-moz-selection {
   background: transparent;
 }
 
-#mainNav {
+/* #mainNav {
   position: absolute;
   border-bottom: 1px solid #e9ecef;
   background-color: white;
@@ -349,8 +343,8 @@ img::-moz-selection {
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
-}
-
+} */
+/*
 @media only screen and (min-width: 992px) {
   #mainNav {
     border-bottom: 1px solid transparent;
@@ -371,17 +365,17 @@ img::-moz-selection {
     color: rgba(255, 255, 255, 0.8);
   }
 }
-
+*/
+/*
 @media only screen and (min-width: 992px) {
   #mainNav {
     transition: background-color 0.2s;
-    /* Force Hardware Acceleration in WebKit */
     transform: translate3d(0, 0, 0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   #mainNav.is-fixed {
-    /* when the user scrolls down, we hide the header right above the viewport */
+     
     position: fixed;
     top: -67px;
     transition: transform 0.2s;
@@ -401,19 +395,20 @@ img::-moz-selection {
     color: #0085A1;
   }
   #mainNav.is-visible {
-    /* if the user changes the scrolling direction, we show the header */
+    
     transform: translate3d(0, 100%, 0);
   }
 }
-
+*/
 
 .post-preview > a {
   color: #212529;
 }
 
-.post-preview > a:focus, .post-preview > a:hover {
+.post-preview > a:focus,
+.post-preview > a:hover {
   text-decoration: none;
-  color: #0085A1;
+  color: #0085a1;
 }
 
 .post-preview > a > .post-title {
@@ -439,43 +434,40 @@ img::-moz-selection {
   color: #212529;
 }
 
-.post-preview > .post-meta > a:focus, .post-preview > .post-meta > a:hover {
+.post-preview > .post-meta > a:focus,
+.post-preview > .post-meta > a:hover {
   text-decoration: underline;
-  color: #0085A1;
+  color: #0085a1;
 }
-
-
- 
 
 .stats {
   background: #f2f5f8 !important;
-  color: #000 !important
+  color: #000 !important;
 }
 
 .articles {
   font-size: 10px;
-  color: #a1aab9
+  color: #a1aab9;
 }
 
 .number1 {
-  font-weight: 500
+  font-weight: 500;
 }
 
 .followers {
   font-size: 10px;
-  color: #a1aab9
+  color: #a1aab9;
 }
 
 .number2 {
-  font-weight: 500
+  font-weight: 500;
 }
 
 .rating {
   font-size: 10px;
-  color: #a1aab9
+  color: #a1aab9;
 }
 
 .number3 {
-  font-weight: 500
+  font-weight: 500;
 }
-
