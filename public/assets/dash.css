@@ -67,6 +67,10 @@ body {
 }
 
 
+.nav-wrapper {
+  z-index: 2;
+}
+
 
 /*common styles !!!YOU DON'T NEED THEM */
 .container {
@@ -139,7 +143,7 @@ body {
   }
 }
 
-/*common link styles !!!YOU NEED THEM*/
+ 
 .effect {
   display: flex;
 
