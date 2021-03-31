@@ -10746,7 +10746,7 @@ img::-moz-selection {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: rgba(31, 30, 30, 0.7);
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -10761,7 +10761,7 @@ img::-moz-selection {
   background-color: rgb(211, 211, 211, 0.5);
 }
 .nav-wrapper {
-  opacity: 0.5;
+  /* opacity: 0.5; */
   color: var(--yellow);
   background-color: rgb(211, 211, 211, 0.5);
 }
@@ -10840,6 +10840,7 @@ img::-moz-selection {
   background-image: url("blogs-photo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 header.masthead {
   padding-top: 10.5rem;

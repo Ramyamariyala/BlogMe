@@ -1,6 +1,6 @@
 body {
   font-family: Arial;
-  padding: 20px;
+  /* padding: 20px; */
   background: #f1f1f1;
 }
 
@@ -103,6 +103,7 @@ body {
   }
 }
 
+
 .effect {
   width: 100%;
   padding: 50px 0px 70px 0px;
@@ -197,7 +198,7 @@ body {
 body {
   font-size: 20px;
   color: #212529;
-  font-family: "Lora", "Times New Roman", serif;
+  /* font-family: "Lora", "Times New Roman", serif; */
 }
 
 p {
@@ -437,3 +438,6 @@ img::-moz-selection {
   
 }
 
+.main-content {
+margin-top: 150px;
+}
