@@ -4,8 +4,8 @@
 
 // Dependencies
 // =============================================================
-var path = require("path");
-
+// var path = require("path");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -18,24 +18,35 @@ module.exports = function(app) {
   });
 
   // cms route loads cms.html
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
-  });
+  // app.get("/cms", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/cms.html"));
+  // });
 
-  // blog route loads blog.html
-  app.get("/blog", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/blog.html"));
-  });
+  // // blog route loads blog.html
+  // app.get("/blog", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/blog.html"));
+  // });
 
   // authors route loads author-manager.html
-  app.get("/authors", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/author-manager.html"));
-  });
+  // app.get("/title", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/title-manager.html"));
+  // });
   app.get("/signup", function(req, res) {
+    if (req.user) {
+      res.redirect("/dashboard");
+          }
     res.render("signup")
   });
+
   app.get("/login", function(req, res) {
+    if (req.user) {
+      res.redirect("/dashboard");
+          }
     res.render("login")
+  });
+
+  app.get("/dashboard",isAuthenticated, function(req, res) {
+    res.render("dashboard")
   });
   app.get("/landing", function(req, res) {
     res.render("index")
