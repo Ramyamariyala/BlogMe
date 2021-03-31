@@ -40,6 +40,9 @@ module.exports = function(app) {
   app.get("/landing", function(req, res) {
     res.render("index")
   });
+  app.get("/dashboard", function(req, res) {
+    res.render("dashboard")
+  });
 };
 
 

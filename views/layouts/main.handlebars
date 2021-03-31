@@ -11,7 +11,7 @@
         type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/assets/css/styles.css">
+ 
   <link rel="stylesheet" href="css/dash.css">
  
 </head>
@@ -29,10 +29,27 @@
         <!-- Contact form JS-->
         <script src="assets/mail/jqBootstrapValidation.js"></script>
         <script src="assets/mail/contact_me.js"></script>
-        
+        <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
+        <script src="/js/test.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
 <script src="/js/login.js"></script>
 <script src="/js/signup.js"></script>
+<script src="/js/login.js"></script>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '477791086728426',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v10.0'
+    });
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
 </body>
 </html>
