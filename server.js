@@ -22,7 +22,7 @@ app.set("view engine", "handlebars")
 
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static("./public"));
 
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -36,7 +36,10 @@ require("./routes/post-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
+
 db.sequelize.sync().then(function() {
+
+
   app.listen(PORT, function() {
     console.log("App listening on http://localhost:"+PORT);
   });
