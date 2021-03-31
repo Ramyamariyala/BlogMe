@@ -1,7 +1,10 @@
+require("dotenv").config();
+
+module.exports = 
 {
   "development": {
-    "username": "root",
-    "password": "Gautham@01",
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASSWORD,
     "database": "blog_me",
     "host": "127.0.0.1",
     "port": 3306,
