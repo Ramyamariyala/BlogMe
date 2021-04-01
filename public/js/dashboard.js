@@ -11,14 +11,25 @@
   
   // row.append("<p>On " + new Date(data[i].created_at).toLocaleDateString() + "</p>"); for Date.
 
-  // $(document).ready(function(){
+  $(document).ready(function(){
+     
+       function handleBlogPostSubmit(event){
+        event.preventDefault();
+        let newPost = {
+          title: $("#post-title").val().trim(),
+          body: $("#message").val().trim(),
+          UserId: parseInt($("#blog-info").attr("data-id"))
+        }
+      console.log(newPost);
+      $.post("/api/posts", newPost, function (res){
+        location.reload()
+        console.log(res);
+      })
+       }
 
-  //   var blogContainer = $(".blog-container");
+    $("#add-post-btn").on("click",handleBlogPostSubmit);
   
-  //   //add the id to the post
-
-  //   $(document).on("Click", "#add-post",handleBlogPostSubmit);
-    
+      });    
   //   // function () {
   //   //   var query = window.location.search;
   //   //   var partial = "";

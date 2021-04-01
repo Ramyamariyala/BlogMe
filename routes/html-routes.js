@@ -6,6 +6,7 @@
 // =============================================================
 // var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+const db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -45,8 +46,19 @@ module.exports = function(app) {
     res.render("login")
   });
 
-  app.get("/dashboard",isAuthenticated, function(req, res) {
-    res.render("dashboard")
+  app.get("/dashboard/:id",isAuthenticated, function(req, res) {
+    let currentid = req.params.id;
+    db.User.findOne({
+      where: {
+        id:currentid
+       }
+    }).then(data => {
+      userdata = {
+        id:currentid,
+        title:data.title
+      }
+      res.render("dashboard",userdata)
+    })
   });
   app.get("/landing", function(req, res) {
     res.render("index")
