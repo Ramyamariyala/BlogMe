@@ -34,14 +34,27 @@ $(document).ready(function() {
       title: title
     })
       .then(function(data) {
-
-        window.location.replace("/login");
+        let id = data.id;
+        window.location.replace(`/dashboard/${id}`);
         console.log(data)
         // If there's an error, handle it by throwing up a bootstrap alert
       })
      
       .catch(handleLoginErr);
   }
+
+  // $.post("/api/login", {
+  //   email: email,
+  //   password: password
+  // })
+  //   .then(function(res) {
+  //     let id = res.id;
+  //     window.location.replace(`/dashboard/${id}`);
+  //     // If there's an error, log the error
+  //   })
+  //   .catch(function(err) {
+  //     console.log(err);
+  //   });
 
   function handleLoginErr(err) {
     $("#alert .msg").text(err.responseJSON);

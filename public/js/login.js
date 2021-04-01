@@ -28,8 +28,9 @@ $(document).ready(function() {
       email: email,
       password: password
     })
-      .then(function() {
-        window.location.replace("/members");
+      .then(function(res) {
+        let id = res.id;
+        window.location.replace(`/dashboard/${id}`);
         // If there's an error, log the error
       })
       .catch(function(err) {

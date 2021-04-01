@@ -1,39 +1,41 @@
 {{> navbar}}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">BLOG ME</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button> <br>
+<div class="main-content">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">BLOG ME</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button> <br>
 
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
-      </ul>
-    </div>
-  </div>
-
-  <div class="main">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search this blog">
-      <div class="input-group-append">
-        <button class="btn btn-secondary" type="button">
-          <i class="fa fa-search"></i>
-        </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </ul>
       </div>
     </div>
-  </div>
-</nav>
+
+    <div class="main">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search this blog">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 
-<div class="header">
-  <h1>BLOG TITLE</h1>
+
+<div class="header" id = "blog-info" data-id = {{id}}>
+  <h1>{{title}} </h1>
 </div>
 
 <div class="row">
@@ -57,6 +59,7 @@
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
               <div class="form-group">
+                <input class="form-control mb-2" id="post-title" type= "text" placeholder="Post-title">
                 <label class="sr-only" for="message">post</label>
                 <textarea class="form-control" id="message" rows="3" placeholder="What are you thinking?"></textarea>
               </div>
@@ -74,8 +77,8 @@
           </div>
 
           <div class="btn-toolbar justify-content-between">
-            <div class="btn-group">
-              <button type="submit" class="btn btn-primary">Add Post</button>
+            <div class="btn-group" >
+              <button type="submit" class="btn btn-primary" id= "add-post-btn">Add Post</button>
 
 
             </div>
@@ -102,24 +105,64 @@
         </div>
       </div>
 
-    </div>
-
-
-
-    {{!-- <div class="card">
-      <h2>COMMENTS</h2>
-      <div class="card my-4">
-        <h5 class="card-header">Leave a Comment:</h5>
-        <div class="card-body">
-          <form>
-            <div class="form-group">
-              <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
+                <div class="form-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Upload image</label>
+                  </div>
+                </div>
+                <div class="py-4"></div>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+
+            <div class="btn-toolbar justify-content-between">
+              <div class="btn-group">
+                <button type="submit" class="btn btn-primary">Add Post</button>
+
+
+
+              </div>
+              <div class="btn-group">
+                <!-- Like/dislike Button -->
+                <span class="likebtn-wrapper" data-white_label="true" data-identifier="item_1"
+                  data-counter_show="false"></span>
+                <script>(function (d, e, s) { if (d.getElementById("likebtn_wjs")) return; a = d.createElement(e); m = d.getElementsByTagName(e)[0]; a.async = 1; a.id = "likebtn_wjs"; a.src = s; m.parentNode.insertBefore(a, m) })(document, "script", "//w.likebtn.com/js/w/widget.js");</script>
+
+
+                <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-globe"></i> Public
+                </button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Public</a>
+                  <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Friends</a>
+                  <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Just me</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
-    </div> --}}
+
+
+
+      {{!-- <div class="card">
+        <h2>COMMENTS</h2>
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div> --}}
 
 
 
@@ -144,15 +187,14 @@
                       class="number2">3</span> </div>
                   <div class="d-flex flex-column"> <span class="rating">Rating</span> <span class="number3">7.2</span>
                   </div>
+                  <div class="button mt-2 d-flex flex-row align-items-center"> <button
+                      class="btn btn-sm btn-outline-primary w-100">Chat</button> <button
+                      class="btn btn-sm btn-primary w-100 ml-2">Follow</button> </div>
                 </div>
-                <div class="button mt-2 d-flex flex-row align-items-center"> <button
-                    class="btn btn-sm btn-outline-primary w-100">Chat</button> <button
-                    class="btn btn-sm btn-primary w-100 ml-2">Follow</button> </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
 
       <div class="card">
@@ -256,9 +298,24 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <hr>
+          <hr>
+        </div>
+        <div class="card">
+          <h3>Share on Social Media</h3>
+          <!-- social buttons -->
+          <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+            <a class="a2a_button_facebook"></a>
+            <a class="a2a_button_twitter"></a>
+            <a class="a2a_button_email"></a>
+            <a class="a2a_button_wordpress"></a>
+            <a class="a2a_button_whatsapp"></a>
+          </div>
+          <script async src="https://static.addtoany.com/menu/page.js"></script>
+          <!-- social buttons -->
+
+        </div>
       </div>
       <div class="card">
         <h3>Share on Social Media</h3>
@@ -274,9 +331,7 @@
         <script async src="https://static.addtoany.com/menu/page.js"></script>
         <!-- social buttons -->
 
+      <div class="footer">
+        <p>Thank you for visiting Blog Me</p>
       </div>
-    </div>
-
-    <div class="footer">
-      <p>Thank you for visiting Blog Me</p>
     </div>
