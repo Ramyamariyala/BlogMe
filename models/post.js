@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1]
     },
-    // created_at: Sequelize.DATE,
+    
   });
 
   Post.associate = function(models) {
