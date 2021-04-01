@@ -13,6 +13,35 @@
 
   $(document).ready(function(){
      
+    let currentUserId = parseInt($("#blog-info").attr("data-id"))
+    function getUserPosts(id){
+      $.get(`/api/userposts/${id}`).then (res =>
+        {
+          let userpostdiv = $("#userpostdiv");
+          let postHtml = ""; 
+          let postArray = res;
+          
+          if(postArray.length === 0){
+            userpostdiv.html("<h3>No post yet!!</h3>");
+          }
+          else {
+            for(let i=0; i< postArray.length; i++){
+              let date = new Date((postArray[i].createdAt).substring(0,10)).toDateString();
+              
+                postHtml+=`<div class="post-preview">
+                <h2 class="post-title">${postArray[i].title}</h2>
+                <h3 class="post-subtitle">${postArray[i].body}</h3>
+                <p class="post-meta">Posted on ${date}</p>
+            </div>
+            <hr>`
+            }
+            userpostdiv.html(postHtml);
+          }
+        });
+    }
+
+      getUserPosts(currentUserId);
+
        function handleBlogPostSubmit(event){
         event.preventDefault();
         let newPost = {
@@ -30,16 +59,3 @@
     $("#add-post-btn").on("click",handleBlogPostSubmit);
   
       });    
-  //   // function () {
-  //   //   var query = window.location.search;
-  //   //   var partial = "";
-      
-  //   //   blogContainer.empty();
-  //   //   var messageH2 = $("<h2>");
-  //   //   messageH2.css({ "text-align": "center", "margin-top": "50px" });
-  //   //   messageH2.html("No posts yet" + partial + ", navigate <a href='/cms" + query +
-  //   //   "'>here</a> in order to get started.");
-  //   //   blogContainer.append(messageH2);
-  //   // }
-
-  // })

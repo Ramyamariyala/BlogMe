@@ -206,30 +206,8 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-              {{#each posts}}
-              <div class="post-preview">
-               
-                  <h2 class="post-title">
-                    {{title}}
-                   </h2>
-                  <h3 class="post-subtitle">
-                    {{body}}
-                  </h3>
-                
-                <p class="post-meta">Posted on
-                   
-                  {{date}}
-                </p>
-              </div>
-              <hr>
-              {{/each}}
-
-
-
-
-
-
-              <div class="post-preview">
+              <div id= "userpostdiv"></div>
+              {{!-- <div class="post-preview">
                 <a href="post.html">
                   <h2 class="post-title">
                     How to be a 24/7 mom with no fail, trial....
@@ -285,7 +263,7 @@
                   on March 20, 2021
                 </p>
               </div>
-              <hr>
+              <hr> --}}
               <!-- Pager -->
               <div class="clearfix">
                 <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>

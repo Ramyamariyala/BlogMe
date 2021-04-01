@@ -44,6 +44,16 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/userposts/:id", function(req, res) {
+    db.Post.findAll({
+      where: {
+        UserId: req.params.id
+      },
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
   // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
     db.Post.create(req.body).then(function(dbPost) {
