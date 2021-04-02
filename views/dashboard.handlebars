@@ -117,14 +117,14 @@
               </div>
             </div>
 
-            <div class="btn-toolbar justify-content-between">
+            {{!-- <div class="btn-toolbar justify-content-between">
               <div class="btn-group">
                 <button type="submit" class="btn btn-primary">Add Post</button>
 
 
 
-              </div>
-              <div class="btn-group">
+              </div> --}}
+              {{!-- <div class="btn-group">
                 <!-- Like/dislike Button -->
                 <span class="likebtn-wrapper" data-white_label="true" data-identifier="item_1"
                   data-counter_show="false"></span>
@@ -139,7 +139,7 @@
                   <a class="dropdown-item" href="#"><i class="fa fa-globe"></i> Public</a>
                   <a class="dropdown-item" href="#"><i class="fa fa-users"></i> Friends</a>
                   <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Just me</a>
-                </div>
+                </div> --}}
               </div>
             </div>
           </div>
@@ -206,30 +206,8 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
-              {{#each posts}}
-              <div class="post-preview">
-               
-                  <h2 class="post-title">
-                    {{title}}
-                   </h2>
-                  <h3 class="post-subtitle">
-                    {{body}}
-                  </h3>
-                
-                <p class="post-meta">Posted on
-                   
-                  {{date}}
-                </p>
-              </div>
-              <hr>
-              {{/each}}
-
-
-
-
-
-
-              <div class="post-preview">
+              <div id= "userpostdiv"></div>
+              {{!-- <div class="post-preview">
                 <a href="post.html">
                   <h2 class="post-title">
                     How to be a 24/7 mom with no fail, trial....
@@ -291,7 +269,7 @@
                 </p>
                 <button onclick="myFunction()" id="myBtn">Read more</button>
               </div>
-              <hr>
+              <hr> --}}
               <!-- Pager -->
               <div class="clearfix">
                 <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
@@ -301,7 +279,7 @@
 
           <hr>
         </div>
-        <div class="card">
+        {{!-- <div class="card">
           <h3>Share on Social Media</h3>
           <!-- social buttons -->
           <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -315,7 +293,7 @@
           <script async src="https://static.addtoany.com/menu/page.js"></script>
           <!-- social buttons -->
 
-        </div>
+        </div> --}}
       </div>
       <div class="card">
         <h3>Share on Social Media</h3>
