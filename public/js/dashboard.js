@@ -12,6 +12,11 @@
   // row.append("<p>On " + new Date(data[i].created_at).toLocaleDateString() + "</p>"); for Date.
 
   $(document).ready(function(){
+
+    $("#add-post-btn").on("click",handleBlogPostSubmit);
+    $("#userpostdiv").on("click", handlePostDelete);
+    $("#userpostdiv").on("click", handlePostEdit);
+    $("#userpostdiv").on("click", handlePostEditSave);
      
     let currentUserId = parseInt($("#blog-info").attr("data-id"))
     function getUserPosts(id){
@@ -32,6 +37,8 @@
                 <h2 class="post-title">${postArray[i].title}</h2>
                 <h3 class="post-subtitle">${postArray[i].body}</h3>
                 <p class="post-meta">Posted on ${date}</p>
+                <button data-id=${postArray[i].id} class="delete-btn">delete post</button>
+                <button data-id=${postArray[i].id} class="edit-btn">Edit post</button>
             </div>
             <hr>`
             }
@@ -56,6 +63,76 @@
       })
        }
 
-    $("#add-post-btn").on("click",handleBlogPostSubmit);
+       function handlePostEdit(event) { 
+        if(!event.target.matches(".edit-btn")){
+          return;
+        }
+        let title = ($(event.target).siblings("h2").text());
+        let postBody = ($(event.target).siblings("h3").text());
+        var currentPost = $(event.target).attr("data-id")
+        console.log(currentPost);
+        console.log(this);
+        $(this).html(`<div class="form-group">
+        <input value=${title} class="form-control mb-2" id="post-title-edit" type= "text" placeholder="Post-title">
+        <label class="sr-only" for="message">post</label>
+        <textarea class="form-control" id="message-edit" rows="3" placeholder="What are you thinking?">${postBody}</textarea>
+      </div> 
+      <button type="submit" class="btn btn-primary" id="save-edit-btn" data-id=${currentPost}>Save Edit</button>`)
+    
+      }
+
+      function handlePostEditSave(event){
+        if(!event.target.matches("#save-edit-btn")){
+          return;
+        }
+        var currentPostId = $(event.target).attr("data-id")
+        var title = $("#post-title-edit").val().trim();
+        var body = $("#message-edit").val().trim();
+        editPost(currentPostId, title,body)
+      }
+  
+      function editPost(id,title,postBody) {
+
+        let editedPost = {
+        
+          title: title,
+          body: postBody,
+          postId: id
+        }
+      
+        $.ajax({
+          method: "PUT",
+          data: editedPost,
+          url: "/api/posts/" 
+        })
+          .then(function() {
+            // getPosts(postCategorySelect.val());
+            location.reload();
+          });
+      }   
+
+    
+    function handlePostDelete(event) { 
+      if(!event.target.matches(".delete-btn")){
+        return;
+      }
+
+      var currentPost = $(event.target).attr("data-id")
+      console.log(currentPost);
+  
+      deletePost(currentPost);
+    }
+
+    function deletePost(id) {
+      $.ajax({
+        method: "DELETE",
+        url: "/api/posts/" + id
+      })
+        .then(function() {
+          // getPosts(postCategorySelect.val());
+          location.reload();
+        });
+    }
+    
   
       });    
