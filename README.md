@@ -34,11 +34,11 @@ MIT
 ![Blog page](https://res.cloudinary.com/dn6cd98sl/image/upload/v1617472579/blog2_jrin2t.png)
 
 * Tools.
-Visual Studio Code https://code.visualstudio.com
-Create a package using npm init -y
-Install express package https://www.npmjs.com/package/express
-Install file system package https://www.npmjs.com/package/file-system
-Mysql workbench
+- Visual Studio Code https://code.visualstudio.com
+- Create a package using npm init -y
+- Install express package https://www.npmjs.com/package/express
+- Install file system package https://www.npmjs.com/package/file-system
+- Mysql workbench
 
 * Links
 [Heroku](https://quiet-thicket-15048.herokuapp.com/)
