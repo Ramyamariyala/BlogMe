@@ -27,16 +27,11 @@ This is an application that used to CREATE, PUT, POST and delete the app.
 MIT
 
 * ScreenShot
-![Signpage](public/assets/loginpage.PNG)
-![loginpage](public/assets/signup.PNG)
-![landing page](public/assets/landing.PNG)
-![Blog page](public/assets/blog1.PNG)
-![Blog page](public/assets/blog2.PNG)
-
-* Gif
-
-[Gif](public/assets/gif.gif)
-
+![Signpage](https://res.cloudinary.com/dn6cd98sl/image/upload/v1617472558/loginpage_h9oi67.png)
+![loginpage](https://res.cloudinary.com/dn6cd98sl/image/upload/v1617472565/signup_n1rnud.png)
+![landing page](https://res.cloudinary.com/dn6cd98sl/image/upload/v1617472501/landing_g5zf33.png)
+![Blog page](https://res.cloudinary.com/dn6cd98sl/image/upload/v1617472574/blog1_hkl7q6.png)
+![Blog page](https://res.cloudinary.com/dn6cd98sl/image/upload/v1617472579/blog2_jrin2t.png)
 
 * Tools.
 Visual Studio Code https://code.visualstudio.com
