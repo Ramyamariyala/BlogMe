@@ -47,5 +47,5 @@ Mysql workbench
 
 * Links
 [Heroku](https://quiet-thicket-15048.herokuapp.com/)
-[Github](https://github.com/Ramyamariyala/Eat-Da-Burger-.git)
+[Github](https://github.com/Ramyamariyala/BlogMe.git)
 
